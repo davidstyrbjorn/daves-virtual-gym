@@ -4,7 +4,9 @@
 
 import 'react-native';
 import React from 'react';
-import App from '../App';
+import App from '../src/App';
+
+import {HomeProps, TestProps}  from '../src/types/props';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
