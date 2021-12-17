@@ -18,13 +18,11 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Routes from './routes';
 
 const App = () => {
   return (
-    
-    <Text style={styles.text}>
-      Dave's Virtual Gym
-    </Text>
+    <Routes/>
   );
 };
 
