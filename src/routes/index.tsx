@@ -11,7 +11,8 @@ const Stack = createNativeStackNavigator();
 const Routes : React.FC<{}> = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Home">
+                {/* Main screens, some of these may have sub-stacks */}
                 <Stack.Screen name="Home" component={Home}/>
                 <Stack.Screen name="Test" component={Test}/>
             </Stack.Navigator>

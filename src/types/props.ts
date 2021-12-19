@@ -1,13 +1,8 @@
+import { FlexStyle, GestureResponderEvent } from "react-native";
 
-type BasicNavigationProps = {
-    navigation: any;
-    route: any;
-}
-
-export type HomeProps = BasicNavigationProps & {
-
-}
-
-export type TestProps = BasicNavigationProps & {
-
+/* Used for all buton components */
+export type ButtonProps = {
+    title: string;
+    onPress: (event: GestureResponderEvent) => void;
+    width: string | null;
 }
