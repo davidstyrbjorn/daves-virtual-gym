@@ -1,6 +1,7 @@
 import React from "react"
-import { Button, Text, View } from "react-native";
+import { Button, GestureResponderEvent, Text, View } from "react-native";
 import { HomeProps } from "../../types/props";
+import NormalButton from "../atoms/button";
 
 const Home : React.FC<HomeProps> = (props: HomeProps) => {
     return (
@@ -8,10 +9,12 @@ const Home : React.FC<HomeProps> = (props: HomeProps) => {
             <Text>
                 This is my mexican home screen
             </Text>
-            <Button title="To mexico" onPress={() => props.navigation.navigate(
-                'Test'
-            )}/>
-
+            <NormalButton 
+                    buttonColor="red2" height={64}  width={16} onPress={(event: GestureResponderEvent) => {
+                        console.log("TJA");
+                    }}
+                textColor="black" title="WHORE"
+            />
         </View>
     );
 }
