@@ -9,8 +9,8 @@ export type HomeProps = {
 export type ButtonProps = {
     title: string;
     onPress: (event: GestureResponderEvent) => void;
-    width: number;
-    height: number;
+    width: number | string;
+    height: number | string;
     buttonColor: ButtonColors;
     textColor: TextColors;
 }

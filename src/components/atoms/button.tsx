@@ -6,7 +6,7 @@ import { ButtonProps } from "../../types/props";
 const NormalButton: React.FC<ButtonProps> = (props: ButtonProps) => {
     const style = normalButton(props);
     return (
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View style={style.container}>
             <TouchableHighlight style={style.button} onPress={props.onPress}>
                 <Text style={style.text}>{props.title}</Text>
             </TouchableHighlight>

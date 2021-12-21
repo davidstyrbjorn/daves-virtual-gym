@@ -7,11 +7,14 @@ Define styles as function so we can pass button props to them and style accordin
 */
 
 const normalButton = (props: ButtonProps) => StyleSheet.create({
+    container: {
+        alignSelf: 'center',
+        width: props.width,
+        height: props.height
+    },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: props.height,
-        paddingHorizontal: props.width,
         borderRadius: 4,
         elevation: 3,
         backgroundColor: buttonColors[props.buttonColor],
