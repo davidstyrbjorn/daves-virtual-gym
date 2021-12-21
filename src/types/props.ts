@@ -1,8 +1,9 @@
 import { GestureResponderEvent } from "react-native";
 import { ButtonColors, NeutralColors, TextColors } from "../styles/colors";
 
-export type HomeProps = {
-
+export type RootStackParamList = {
+    Home: undefined;
+    Exercise: undefined;
 }
 
 /* Used for all buton components */

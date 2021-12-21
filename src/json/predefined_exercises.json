@@ -1,0 +1,52 @@
+{
+    "exercises": [
+        {
+            "name": "Bench Press (Barbell)",
+            "muscle_groups": ["chest", "triceps"],
+            "type": "push",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Military Press (Barbell)",
+            "muscle_groups": ["shoulders", "traps", "triceps"],
+            "type": "push",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Deadlift (Barbell)",
+            "muscle_groups": ["back", "hamstrings"],
+            "type": "pull",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Alternating Curls (Dumbell)",
+            "muscle_groups": ["biceps"],
+            "type": "push",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Bent Over Row (Barbell)",
+            "muscle_groups": ["back"],
+            "type": "pull",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Squats (barbell)",
+            "muscle_groups": ["quads"],
+            "type": "legs",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Leg Press (machine)",
+            "muscle_groups": ["quads", "gluteus"],
+            "type": "legs",
+            "description": "En klassiker"
+        }, 
+        {
+            "name": "Cable Pushdown",
+            "muscle_groups": ["triceps"],
+            "type": "pull",
+            "description": "En klassiker"
+        }
+    ]
+}
