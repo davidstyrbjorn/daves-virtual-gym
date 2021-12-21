@@ -13,4 +13,6 @@ export type ButtonProps = {
     height: number | string;
     buttonColor: ButtonColors;
     textColor: TextColors;
+    padding: number;
+    borderRadius: number;
 }

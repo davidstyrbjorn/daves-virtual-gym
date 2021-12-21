@@ -1,63 +1,68 @@
 import React from "react"
-import { Button, GestureResponderEvent, StyleSheet, Text, View } from "react-native";
+import { GestureResponderEvent, StyleSheet, View } from "react-native";
 import { HomeProps } from "../../types/props";
 import NormalButton from "../atoms/button";
+import LinearGradient from "react-native-linear-gradient";
+import { Text } from "react-native-elements";
 
 const Home : React.FC<HomeProps> = (props: HomeProps) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.topSection}>
-                <Text>
-                    Dave's Gym
-                </Text>
-                    {/* <Button onPress={() => {}} title='tja' ></Button> */}
-                <NormalButton 
-                    buttonColor="red1" width="50%" height="100%" textColor="white" title="Skapa pass" 
-                    onPress={(event: GestureResponderEvent) => {
-                        console.log("TJA");
-                    }}
-                />
-            {/* <NormalButton 
-                    buttonColor="green1" height={64}  width={16} onPress={(event: GestureResponderEvent) => {
-                        console.log("TJA");
-                    }}
-                    textColor="white" title="Starta pass" 
-                    /> */}
-            </View>
-            
-            <View style={styles.graphSection}>
-
-            </View>
-
-            <View style={styles.progressSection}>
-
-            </View>
+    <LinearGradient colors={['#1DC9FF', '#0046AE']}
+            style={styles.linearGradient}>
+        <View style={styles.topSection}>
+            <Text h3 style={styles.headerText}>
+                Dave's Gym
+            </Text>
+            <NormalButton 
+                buttonColor="red1" width="50%" height={45} textColor="white" title="Skapa pass" padding={6} borderRadius={10}
+                onPress={(event: GestureResponderEvent) => {
+                    console.log("TJA");
+                }}
+            />
+            <NormalButton 
+                buttonColor="green1" width="50%" height={45} textColor="white" title="Starta pass" padding={6} borderRadius={10}
+                onPress={(event: GestureResponderEvent) => {
+                    console.log("TJA");
+                }}
+            />
         </View>
+            
+        <View style={styles.graphSection}>
+
+        </View>
+
+        <View style={styles.progressSection}>
+
+        </View>
+    </LinearGradient>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    linearGradient: {
         flex: 1,
         flexDirection: 'column',
-        padding: 10
+    },
+    headerText: {
+        textAlign: 'center',
+        paddingVertical: 8,
+        color: 'white'
     },
     topSection: {
-        flex: 2,
+        flex: 1,
+        color: 'red',
     }, 
     graphSection: {
         flex: 2,
-        backgroundColor: 'red',
     },
     progressSection: {
         flex: 3,
-        backgroundColor: 'green'
     },
     buttonContainer: {
         width: '50%',
         alignSelf: 'center',
         
-    }
+    },
 });
 
 export default Home;

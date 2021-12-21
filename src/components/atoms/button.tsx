@@ -1,15 +1,17 @@
 import React from "react";
-import { Button, Text, TouchableHighlight, View } from "react-native";
-import { normalButton } from "../../styles/button-styles";
+import { View } from "react-native";
+import { Button } from "react-native-elements";
+import { buttonContainerStyle, buttonStyle, buttonTitleStyle } from "../../styles/button-styles";
+import { buttonColors } from "../../styles/colors";
 import { ButtonProps } from "../../types/props";
 
 const NormalButton: React.FC<ButtonProps> = (props: ButtonProps) => {
-    const style = normalButton(props);
+    const container = buttonContainerStyle(props);
+    const title = buttonTitleStyle(props);
+    const button = buttonStyle(props);
     return (
-        <View style={style.container}>
-            <TouchableHighlight style={style.button} onPress={props.onPress}>
-                <Text style={style.text}>{props.title}</Text>
-            </TouchableHighlight>
+        <View style={{padding: props.padding}}>
+            <Button title={props.title} containerStyle={container} titleStyle={title} buttonStyle={button} onPress={props.onPress}/>
         </View>
     );
 }
