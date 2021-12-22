@@ -1,33 +1,34 @@
-import { useNavigation } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { GestureResponderEvent, StyleSheet, View } from "react-native";
-import { Text } from "react-native-elements";
 import LinearGradient from "react-native-linear-gradient";
+import { Text, Title } from "react-native-paper";
+import { backgroundColors } from "../../styles/colors";
+import { textStyle } from "../../styles/text-style";
 import { RootStackParamList } from "../../types/props";
 import NormalButton from "../atoms/button";
 import Graphs from "../molecules/graphs";
 
-const Home : React.FC<{}> = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
-    const navigation = useNavigation();
+const Home : React.FC<Props> = ({navigation}: Props) => {
 
     const getTopSectionJSX = () => {
         return (
-            <View style={styles.topSection}>
-                <Text h3 style={styles.headerText}>
+            <View style={[styles.topSection]}>
+                <Text style={[styles.headerText, textStyle('white', 32).text]}>
                     Dave's Gym
                 </Text>
                 <NormalButton 
-                    buttonColor="red1" width="50%" height={45} textColor="white" title="Skapa övning" padding={6} borderRadius={10}
-                    onPress={(event: GestureResponderEvent) => {
+                    buttonColor="red2" width="50%" height={45} textColor="white" title="Skapa övning" padding={6} borderRadius={10}
+                    onPress={() => {
                         console.log("TJA");
                     }}
                 />
                 <NormalButton 
-                    buttonColor="green1" width="50%" height={45} textColor="white" title="Starta pass" padding={6} borderRadius={10}
-                    onPress={(event: GestureResponderEvent) => {
-                        navigation.navigate({key: "Exercise"});
+                    buttonColor="green2" width="50%" height={45} textColor="white" title="Starta pass" padding={6} borderRadius={10}
+                    onPress={() => {
+                        navigation.navigate("Exercise");
                     }}
                 />
             </View>
@@ -35,7 +36,7 @@ const Home : React.FC<{}> = () => {
     }
 
     return (
-    <LinearGradient colors={['#1DC9FF', '#0046AE']} style={styles.linearGradient}>
+    <LinearGradient colors={[backgroundColors['blue1'], backgroundColors['blue2']]} style={styles.linearGradient}>
         {/* TOP SECTION INCLUDES NAVIGATION BUTTONS & TITLE */}
         {getTopSectionJSX()}
         {/* GRAPHS SECTION, BOTH STATS + PROGRESS */}
@@ -53,8 +54,6 @@ const styles = StyleSheet.create({
     headerText: {
         textAlign: 'center',
         paddingVertical: 8,
-        color: 'white',
-        fontWeight: 'normal'
     },
     topSection: {
         flex: 1,

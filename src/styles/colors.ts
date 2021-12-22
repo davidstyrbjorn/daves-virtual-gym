@@ -5,10 +5,11 @@ export const neutralColors: Record<NeutralColors, string> = {
     'dave_blue_dark': '#0046AE'
 }
 
-export type TextColors = 'black' | 'white';
+export type TextColors = 'black' | 'white' | 'dark-gray';
 export const textColors: Record<TextColors, string> = {
     'white': '#ffffff',
-    'black': '#000000'
+    'black': '#000000',
+    'dark-gray': '#9B9B9B'
 }
 
 export type ButtonColors = 'red1' | 'red2' | 'green1' | 'green2';
@@ -18,3 +19,11 @@ export const buttonColors: Record<ButtonColors, string> = {
     'green1': '#14FF00',
     'green2': '#00EB7A'
 }
+
+export type BackgroundColors = 'blue1' | 'blue2';
+export const backgroundColors: Record<BackgroundColors, string> = {
+    'blue1': '#1DC9FF',
+    'blue2': '#0046AE'
+}
+
+export const selectedExercise: string = '#4AFF46';

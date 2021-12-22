@@ -9,7 +9,7 @@ export type RootStackParamList = {
 /* Used for all buton components */
 export type ButtonProps = {
     title: string;
-    onPress: (event: GestureResponderEvent) => void;
+    onPress: () => void;
     width: number | string;
     height: number | string;
     buttonColor: ButtonColors;

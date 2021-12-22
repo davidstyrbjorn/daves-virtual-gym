@@ -1,7 +1,8 @@
 import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { LineChart, ProgressChart } from "react-native-chart-kit";
-import { Text } from "react-native-elements";
+import { Text } from "react-native-paper";
+import { textStyle } from "../../styles/text-style";
 
 const Graphs : React.FC<{}> = () => {
     return (
@@ -51,7 +52,7 @@ const Graphs : React.FC<{}> = () => {
             </View>
 
             <View style={styles.progressSection}>
-                <Text>Progress denna vecka 5/7</Text>
+                <Text style={textStyle('black').text}>Progress denna vecka 5/7</Text>
                 <ProgressChart
                     data={{
                         data: [5/7]  

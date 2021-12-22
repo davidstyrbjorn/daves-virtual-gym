@@ -1,6 +1,3 @@
-import { NativeStackNavigationProp, NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "./props";
-
 export type MuscleGroups = 
     | 'chest' | 'triceps' | 'shoulders' 
     | 'traps' | 'back' | 'hamstrings' | 'biceps'
@@ -16,5 +13,7 @@ export type Exercise = {
     description: string;
 }
 
-export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
-export type ExerciseScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Exercise'>;
+export type Session = {
+    current_exercise_index: number;
+    selected_exercises: number[]
+}
