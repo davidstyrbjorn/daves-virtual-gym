@@ -1,25 +1,27 @@
 import React from "react";
 import { StyleProp, TextStyle, View, ViewStyle } from "react-native";
-import { Button } from "react-native-paper";
-import { Text } from "react-native-paper/lib/typescript/components/Avatar/Avatar";
+import { Button } from "react-native-elements";
 import { buttonColors, textColors } from "../../styles/colors";
 import { ButtonProps } from "../../types/props";
+import LinearGradient from 'react-native-linear-gradient';
+
 
 const NormalButton: React.FC<ButtonProps> = (props: ButtonProps) => {
     const label = buttonTitleStyle(props);
-    const button = buttonStyle(props);
     const container = buttonContainerStyle(props);
     return (
-        <View style={container}>
-            <Button 
-                mode="contained" 
-                color={buttonColors[props.buttonColor]} 
-                onPress={props.onPress} 
-                labelStyle={label}
-            >
-                {props.title}
-            </Button>
-        </View>
+        <Button 
+            ViewComponent={LinearGradient} 
+            linearGradientProps={{
+                colors: [buttonColors[props.buttonColor1], buttonColors[props.buttonColor2]],
+                start: {x: 0, y: 0},
+                end: {x: 0.5, y: 0.5}
+            }}
+            title={props.title} 
+            containerStyle={container} 
+            titleStyle={label} 
+            onPress={props.onPress}
+        />
     );
 }
 
@@ -33,11 +35,6 @@ const buttonContainerStyle = (props: ButtonProps): StyleProp<ViewStyle> => {
         padding: props.padding,
     }
 };
-
-const buttonStyle = (props: ButtonProps): StyleProp<ViewStyle> => {
-    return {
-    }
-}
 
 const buttonTitleStyle = (props: ButtonProps): StyleProp<TextStyle> => {
     return {    

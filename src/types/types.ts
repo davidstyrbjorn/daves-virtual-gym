@@ -15,5 +15,7 @@ export type Exercise = {
 
 export type Session = {
     current_exercise_index: number;
-    selected_exercises: number[]
+    selected_exercises: number[];
+    shuffle_order: boolean;
+    take_time: boolean;
 }

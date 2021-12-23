@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { LineChart, ProgressChart } from "react-native-chart-kit";
-import { Text } from "react-native-paper";
+import { Text } from "react-native-elements";
 import { textStyle } from "../../styles/text-style";
 
 const Graphs : React.FC<{}> = () => {

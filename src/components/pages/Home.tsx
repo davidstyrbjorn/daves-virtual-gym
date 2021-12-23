@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { GestureResponderEvent, StyleSheet, View } from "react-native";
+import { Text } from "react-native-elements";
 import LinearGradient from "react-native-linear-gradient";
-import { Text, Title } from "react-native-paper";
 import { backgroundColors } from "../../styles/colors";
 import { textStyle } from "../../styles/text-style";
 import { RootStackParamList } from "../../types/props";
@@ -20,15 +20,15 @@ const Home : React.FC<Props> = ({navigation}: Props) => {
                     Dave's Gym
                 </Text>
                 <NormalButton 
-                    buttonColor="red2" width="50%" height={45} textColor="white" title="Skapa övning" padding={6} borderRadius={10}
+                    buttonColor1='red1' buttonColor2="red2" width="65%" height={80} textColor="white" title="Skapa övning" padding={0} borderRadius={10}
                     onPress={() => {
                         console.log("TJA");
                     }}
                 />
                 <NormalButton 
-                    buttonColor="green2" width="50%" height={45} textColor="white" title="Starta pass" padding={6} borderRadius={10}
+                    buttonColor1="green1" buttonColor2="green2" width="65%" height={80} textColor="white" title="Starta pass" padding={0} borderRadius={10}
                     onPress={() => {
-                        navigation.navigate("Exercise");
+                        navigation.navigate("ExerciseSetup");
                     }}
                 />
             </View>

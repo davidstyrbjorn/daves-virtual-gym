@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, TouchableHighlight, View } from 'react-native';
-import { List, Text } from 'react-native-paper';
+import { Text } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useRecoilState } from 'recoil';
 import { sessionState } from '../../recoil/atoms';
 import { selectedExercise } from '../../styles/colors';
 import { textStyle } from '../../styles/text-style';
-import { Exercise } from '../../types/types';
+import { Exercise, Session } from '../../types/types';
 
 type Props = {
     exercise: Exercise;
@@ -25,37 +26,28 @@ const ExerciseCard : React.FC<Props> = ({ exercise, index } : Props) => {
     }
 
     const addExercise = () => {
-        setSession({
-            current_exercise_index: session.current_exercise_index,
-            selected_exercises: [...session.selected_exercises, index]
-        });
+        setSession({...session, selected_exercises: [...session.selected_exercises, index]});
     }
 
     const removeExercise = () => {
-        setSession({
-            current_exercise_index: session.current_exercise_index,
-            selected_exercises: session.selected_exercises.filter((value) => value !== index)
-        })
+        const selected_exercises = session.selected_exercises.filter((value) => value !== index);
+        setSession({...session, selected_exercises: selected_exercises});
     }
 
     const isSelected: boolean = session.selected_exercises.indexOf(index) !== -1;
     return (
-        <List.Item title={exercise.name} description={exercise.description}
-            left={() => <List.Icon icon="folder"/>} underlayColor='white' onPress={onCardPress}
-        />
-        // <TouchableHighlight onPress={onCardPress}> 
-        //     {/* DOING THIS TO MAKE THE CARD TOUCHABLE */}
-        //     <View style={[styles.container, {backgroundColor: isSelected ? selectedExercise : 'white'}]} >
-        //         <View style={styles.icon}>
-        //             {/* ICON HERE LATER */}
-        //             <Text>{index}</Text>
-        //         </View>
-        //         <View>
-        //             <Text style={textStyle('black', 16).text}>{exercise.name}</Text>
-        //             <Text style={textStyle('dark-gray', 12).text}>{exercise.description}</Text>
-        //         </View>
-        //     </View>
-        // </TouchableHighlight>
+        <TouchableHighlight onPress={onCardPress}> 
+            {/* DOING THIS TO MAKE THE CARD TOUCHABLE */}
+            <View style={[styles.container, {backgroundColor: isSelected ? selectedExercise : 'white'}]} >
+                <View style={styles.icon}>
+                    <Icon name="dumbbell" size={32}/>
+                </View>
+                <View>
+                    <Text style={textStyle('black', 16).text}>{exercise.name}</Text>
+                    <Text style={textStyle('dark-gray', 12).text}>{exercise.description}</Text>
+                </View>
+            </View>
+        </TouchableHighlight>
     );
 }
 
@@ -63,7 +55,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        paddingVertical: 8,
+        paddingVertical: 10,
         borderBottomWidth: 1,
         borderTopWidth: 1,
         borderColor: 'rgba(20, 20, 20, 0.8)'
@@ -73,7 +65,8 @@ const styles = StyleSheet.create({
     exerciseSubText: {
     },
     icon: {
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingHorizontal: 16
     }
 });
 
