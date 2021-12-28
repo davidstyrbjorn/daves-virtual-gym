@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableHighlight, View } from 'react-native';
 import { Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -6,7 +6,7 @@ import { useRecoilState } from 'recoil';
 import { sessionState } from '../../recoil/atoms';
 import { selectedExercise } from '../../styles/colors';
 import { textStyle } from '../../styles/text-style';
-import { Exercise, Session } from '../../types/types';
+import { Exercise } from '../../types/types';
 
 type Props = {
     exercise: Exercise;
@@ -21,20 +21,21 @@ const ExerciseCard : React.FC<Props> = ({ exercise, index } : Props) => {
     const onCardPress = () => {
         // Check if exercise already has been selected into the current session
         // We either add or remove, see function below
-        if(session.selected_exercises.indexOf(index) !== -1) removeExercise();
+        if(session.selected_exercises_indices.indexOf(index) !== -1) removeExercise();
         else addExercise();
     }
 
     const addExercise = () => {
-        setSession({...session, selected_exercises: [...session.selected_exercises, index]});
+        setSession({...session, selected_exercises_indices: [...session.selected_exercises_indices, index]});
     }
 
     const removeExercise = () => {
-        const selected_exercises = session.selected_exercises.filter((value) => value !== index);
-        setSession({...session, selected_exercises: selected_exercises});
+        // Remove the exercise at index from selected exercises
+        const selected_exercises_indices = session.selected_exercises_indices.filter((value) => value !== index);
+        setSession({...session, selected_exercises_indices: selected_exercises_indices});
     }
 
-    const isSelected: boolean = session.selected_exercises.indexOf(index) !== -1;
+    const isSelected: boolean = session.selected_exercises_indices.indexOf(index) !== -1;
     return (
         <TouchableHighlight onPress={onCardPress}> 
             {/* DOING THIS TO MAKE THE CARD TOUCHABLE */}

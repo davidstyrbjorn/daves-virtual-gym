@@ -32,7 +32,7 @@ const buttonContainerStyle = (props: ButtonProps): StyleProp<ViewStyle> => {
         width: props.width,
         height: props.height,
         borderRadius: props.borderRadius,
-        padding: props.padding,
+        padding: props.padding
     }
 };
 

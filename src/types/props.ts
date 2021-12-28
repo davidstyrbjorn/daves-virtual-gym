@@ -2,8 +2,11 @@ import { ButtonColors, TextColors } from "../styles/colors";
 
 export type RootStackParamList = {
     Home: undefined;
+    ExerciseCreate: undefined;
     ExerciseSetup: undefined;
     ExerciseSession: undefined;
+    PostExercise: undefined;
+    Log: undefined;
 }
 
 /* Used for all buton components */
@@ -17,4 +20,13 @@ export type ButtonProps = {
     textColor: TextColors;
     padding: number;
     borderRadius: number;
+}
+
+export type IncrementerProps = {
+    value: string,
+    description: string,
+    onValueIncrease: () => void;
+    onValueDecrease: () => void;
+    numericalInput?: boolean;
+    setValueCallback?: (x: number) => void
 }

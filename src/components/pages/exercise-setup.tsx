@@ -23,9 +23,20 @@ const ExerciseSetup : React.FC<Props> = ({navigation}: Props) => {
     const [takeTime, setTakeTime] = useState(false);
     
     const confirmWorkout = () => {
+        if(session.selected_exercises_indices.length === 0){
+            return;
+            // TODO: Tell the user we have no exercises selected!
+        }
+        // Do we shuffle the array?
+        const array = {...session}.selected_exercises_indices;
+        if(shuffleOrder){
+            array.sort(() => (Math.random() > .5 ? 1 : -1)); // Shuffle the array
+        }
+
         // Update the recoil state
-        setSession({...session, shuffle_order: shuffleOrder, take_time: takeTime});
+        setSession({...session, shuffle_order: shuffleOrder, take_time: takeTime, selected_exercises_indices: array});
         // Navigate to the exercise session screen where we do our actual workout
+        navigation.popToTop();
         navigation.navigate("ExerciseSession")
     }
 
@@ -113,7 +124,6 @@ const styles = StyleSheet.create({
         paddingLeft: 8
     },
     checkBoxView: {
-        //flex: 1,
         flexDirection: 'row'
     },
     checkBoxContainer: {

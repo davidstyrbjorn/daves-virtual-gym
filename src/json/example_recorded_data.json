@@ -1,0 +1,17 @@
+{
+    "exercises": [
+        {
+            "name": "Bench Press (Barbell)",
+            "pr": {
+                "1rm": "60" 
+            },
+            "sets": [
+                {
+                    "kg": 60,
+                    "reps": 12,
+                    "date": "2020-07-10"
+                }
+            ]
+        }
+    ]
+}

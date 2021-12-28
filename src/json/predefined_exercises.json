@@ -1,31 +1,31 @@
 {
     "exercises": [
         {
-            "name": "Bench Press (Barbell)",
+            "name": "Bench Press (barbell)",
             "muscle_groups": ["chest", "triceps"],
             "type": "push",
             "description": "En klassiker"
         },
         {
-            "name": "Military Press (Barbell)",
+            "name": "Military Press (barbell)",
             "muscle_groups": ["shoulders", "traps", "triceps"],
             "type": "push",
             "description": "En klassiker"
         },
         {
-            "name": "Deadlift (Barbell)",
+            "name": "Deadlift (barbell)",
             "muscle_groups": ["back", "hamstrings"],
             "type": "pull",
             "description": "En klassiker"
         },
         {
-            "name": "Alternating Curls (Dumbell)",
+            "name": "Alternating Curls (dumbell)",
             "muscle_groups": ["biceps"],
             "type": "push",
             "description": "En klassiker"
         },
         {
-            "name": "Bent Over Row (Barbell)",
+            "name": "Bent Over Row (barbell)",
             "muscle_groups": ["back"],
             "type": "pull",
             "description": "En klassiker"
@@ -47,6 +47,30 @@
             "muscle_groups": ["triceps"],
             "type": "pull",
             "description": "En klassiker"
+        },
+        {
+            "name": "Lunges (dumbell)",
+            "muscle_groups": ["quads", "gluteus"],
+            "type": "legs",
+            "description": "En klassiker, bra för röven"
+        },
+        {
+            "name": "Hamstrings Curl (machine)",
+            "muscle_groups": ["hamstrings"],
+            "type": "legs",
+            "description": "En klassiker"
+        },
+        {
+            "name": "Squats (kettlebell)",
+            "muscle_groups": ["quads"],
+            "type": "legs",
+            "description": "Variation av klassikern"
+        },
+        {
+            "name": "Calf Raises (dumbell)",
+            "muscle_groups": ["calfs"],
+            "type": "legs",
+            "description": "En klassiker för dina små vader"
         }
     ]
 }
